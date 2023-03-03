@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Receipts</title>
+    <title>Accounts</title>
 </head>
 <body>
     <header>
@@ -20,27 +20,20 @@
         </nav>
     </header>
     <main>
-        <h1>My Receipts</h1>
+        <h1>Accounts</h1>
         <table>
             <thead>
                 <tr>
-                    <th>Vendor</th>
-                    <th>Total</th>
-                    <th>Tax</th>
-                    <th>Date</th>
-                    <th>Category</th>
-                    <th>Account</th>
+                    <th>Name</th>
+                    <th>Number of receipts</th>
                 </tr>
             </thead>
             <tbody>
-                {% for receipt in receipt_item %}
+                {% for account in account_item %}
                     <tr>
-                        <td>{{receipt.vendor}}</td>
-                        <td>{{receipt.total}}</td>
-                        <td>{{receipt.tax}}</td>
-                        <td>{{receipt.date|date:"m/d/y"}}</td>
-                        <td>{{receipt.category}}</td>
-                        <td>{{receipt.account}}</td>
+                        <td>{{account.name}}</td>
+                        <td>{{account.number}}</td>
+                        <td>{{account.receipts.all|length}}</td>
                     </tr>
                 {% endfor %}
             </tbody>
