@@ -26,3 +26,8 @@ def user_login(request):
     }
 
     return render(request, "accounts/login.html", context)
+
+
+def user_logout(request):
+    logout(request)
+    return redirect("login")
