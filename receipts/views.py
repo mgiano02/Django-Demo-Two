@@ -39,6 +39,7 @@ def list_expenses(request):
     return render(request, "receipts/categories.html", context)
 
 
+@login_required
 def create_expense_view(request):
     if request.method == "POST":
         form = ExpenseCatForm(request.POST)
@@ -63,6 +64,7 @@ def list_accounts(request):
     return render(request, "receipts/accounts.html", context)
 
 
+@login_required
 def create_account_view(request):
     if request.method == "POST":
         form = AccountForm(request.POST)
